@@ -68,48 +68,38 @@ class WhTimerBloc extends Bloc<WhTimerEvent, WhTimerState> {
     print(currentPhase);
     switch (currentPhase) {
       case Phases.idle:
-        print('goto from IDLE');
         yield WhTimerInFirstHold(
             Phases.holdOnOut, Decimal.parse('0'), Decimal.parse('0'));
         // Надо начинать считать плюсовой счетчик
         // мы его прекращаем, если он все еще считает
         _tickerPlusSubscription?.cancel();
         _tickerMinusSubscription?.cancel();
-        print('Start to listen PLUS ticker');
         _tickerPlusSubscription = _tickerPlus.tick().listen((duration) {
-          print(duration);
           add(WhTimerPlusTicked(duration: duration));
         });
         break;
       case Phases.breathe:
-        print('goto from BREATHE');
         yield WhTimerInFirstHold(
             Phases.holdOnOut, Decimal.parse('0'), Decimal.parse('0'));
         _tickerPlusSubscription?.cancel();
         _tickerMinusSubscription?.cancel();
-        print('Start to listen PLUS ticker');
         _tickerPlusSubscription = _tickerPlus.tick().listen((duration) {
-          print(duration);
           add(WhTimerPlusTicked(duration: duration));
         });
         break;
       case Phases.holdOnOut:
-        print('goto from HOLD ON OUT');
         yield WhTimerInSecondHold(
             Phases.holdOnIn, Decimal.parse('0'), Decimal.parse('0'));
         // Надо начинать считать минусовой счетчик
         // мы его прекращаем, если он все еще считает
         _tickerPlusSubscription?.cancel();
         _tickerMinusSubscription?.cancel();
-        print('Start to listen Minus ticker');
         _tickerMinusSubscription =
             _tickerMinus.tick(ticks: 15).listen((duration) {
-          print(duration);
           add(WhTimerMinusTicked(duration: duration));
         });
         break;
       case Phases.holdOnIn:
-        print('goto from HOLD ON IN');
         _tickerPlusSubscription?.cancel();
         _tickerMinusSubscription?.cancel();
         yield WhTimerInBreathe(
