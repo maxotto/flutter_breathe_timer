@@ -4,16 +4,16 @@ import 'package:bloc/bloc.dart';
 /// [BlocObserver] for the counter application which
 /// observes all [Cubit] state changes.
 /// {@endtemplate}
-class CounterObserver extends BlocObserver {
+class MyObserver extends BlocObserver {
   @override
   void onChange(Cubit cubit, Change change) {
-    print('${cubit.runtimeType} $change');
+    print('Говорит обсервер: ${cubit.runtimeType} $change');
     super.onChange(cubit, change);
   }
 
   @override
   void onTransition(Bloc bloc, Transition transition) {
-    print('${bloc.runtimeType} $transition');
+    print('Говорит обсервер: ${bloc.runtimeType} $transition');
     super.onTransition(bloc, transition);
   }
 }
