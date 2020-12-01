@@ -4,8 +4,6 @@ import 'package:WimHofTimer/bloc/wh_timer_bloc.dart';
 import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hardware_buttons/hardware_buttons.dart' as HardwareButtons;
-
 import '../wh_timer.dart';
 
 /// {@template counter_view}

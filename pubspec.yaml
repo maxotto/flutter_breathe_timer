@@ -16,7 +16,6 @@ dependencies:
   wave: ^0.1.0
   equatable: ^1.2.5
   decimal: ^0.3.0
-  hardware_buttons: ^1.0.0
 
 dev_dependencies:
   flutter_test:
