@@ -25,3 +25,27 @@ class WhTimerResetEvent extends WhTimerEvent {
   @override
   String toString() => 'WhTimerResetEvent {currentState = $currentState}';
 }
+
+class WhTimerPlusTicked extends WhTimerEvent {
+  final int duration;
+
+  const WhTimerPlusTicked({@required this.duration});
+
+  @override
+  List<Object> get props => [duration];
+
+  @override
+  String toString() => "WhTimerPlusTicked { duration: $duration }";
+}
+
+class WhTimerMinusTicked extends WhTimerEvent {
+  final int duration;
+
+  const WhTimerMinusTicked({@required this.duration});
+
+  @override
+  List<Object> get props => [duration];
+
+  @override
+  String toString() => "WhTimerMinusTicked { duration: $duration }";
+}

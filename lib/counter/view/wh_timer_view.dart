@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:WimHofTimer/bloc/wh_timer_bloc.dart';
 import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hardware_buttons/hardware_buttons.dart' as HardwareButtons;
 
 import '../wh_timer.dart';
 
@@ -12,7 +15,6 @@ import '../wh_timer.dart';
 class WHTimerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -20,7 +22,51 @@ class WHTimerView extends StatelessWidget {
         Center(
           child: BlocBuilder<WhTimerBloc, WhTimerState>(
             builder: (context, state) {
-              return Text('$state');
+              String message = "Message";
+              switch (state.phase) {
+                case Phases.idle:
+                  message = 'Step 1: 30-40 Deep Breaths';
+                  break;
+                case Phases.holdOnOut:
+                  message =
+                      'Step 2: The Hold. Let the air out and stop breathing';
+                  break;
+                case Phases.holdOnIn:
+                  message =
+                      'Step 3:  Draw one big breath to fill your lungs. Hold the breath for 15 seconds';
+                  break;
+                case Phases.breathe:
+                  message = 'Step 1: 30-40 Deep Breaths';
+                  break;
+              }
+              return Column(children: [
+                Text(message,
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    )),
+                SizedBox(
+                  height: 30,
+                ),
+                state.holdOnOutDuration > Decimal.zero
+                    ? Text(state.holdOnOutDuration.toString(),
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                        ))
+                    : (state.holdOnInDuration > Decimal.zero
+                        ? Text(state.holdOnInDuration.toString(),
+                            style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                            ))
+                        : SizedBox(
+                            height: 30,
+                          )),
+                SizedBox(
+                  height: 30,
+                ),
+              ]);
             },
           ),
         ),
@@ -29,25 +75,6 @@ class WHTimerView extends StatelessWidget {
               state.runtimeType != previousState.runtimeType,
           builder: (context, state) => Actions(),
         ),
-        /*
-        Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            FloatingActionButton(
-              key: const Key('counterView_next_floatingActionButton'),
-              child: const Icon(Icons.navigate_next_rounded),
-              onPressed: () =>
-                  context.read<WhTimerBloc>().add(WhTimerNextEvent()),
-            ),
-            FloatingActionButton(
-              key: const Key('counterView_reset_floatingActionButton'),
-              child: const Icon(Icons.reset_tv),
-              onPressed: () =>
-                  context.read<WhTimerBloc>().add(WhTimerResetEvent()),
-            ),
-          ],
-        ),*/
       ],
     );
   }

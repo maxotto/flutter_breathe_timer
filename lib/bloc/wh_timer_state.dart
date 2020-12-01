@@ -63,3 +63,13 @@ class WhTimerFinished extends WhTimerState {
   String toString() =>
       'WhTimerFinished {Phase: $phase, hold duration on out: $holdOnOutDuration, hold duration on in: $holdOnInDuration}';
 }
+
+class WhTimerPlusTimerInProgress extends WhTimerState {
+  const WhTimerPlusTimerInProgress(
+      Phases phase, Decimal holdOnOutDuration, Decimal holdOnInDuration)
+      : super(phase, holdOnOutDuration, holdOnInDuration);
+
+  @override
+  String toString() =>
+      'WhTimerPlusTimerInProgress {Phase: $phase, hold duration on out: $holdOnOutDuration, hold duration on in: $holdOnInDuration}';
+}

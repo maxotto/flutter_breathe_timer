@@ -1,11 +1,12 @@
 class TickerPlus {
-  Stream<int> tick({int ticks}) {
-    return Stream.periodic(Duration(seconds: 1), (x) => ticks + x).take(ticks);
+  Stream<int> tick() {
+    return Stream.periodic(Duration(seconds: 1), (x) => x);
   }
 }
 
 class TickerMinus {
   Stream<int> tick({int ticks}) {
-    return Stream.periodic(Duration(seconds: 1), (x) => ticks - x).take(ticks);
+    return Stream.periodic(Duration(seconds: 1), (x) => ticks - x - 1)
+        .take(ticks);
   }
 }
