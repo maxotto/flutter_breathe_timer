@@ -24,7 +24,8 @@ class WHTimerView extends StatelessWidget {
               String startCount = '0';
               switch (state.phase) {
                 case Phases.idle:
-                  message = 'Step 1:\n30-40 Deep Breaths';
+                  message = 'Step 1:\n Do 30-40 Deep Breaths';
+                  startCount = '';
                   break;
                 case Phases.holdOnOut:
                   message =
@@ -37,6 +38,7 @@ class WHTimerView extends StatelessWidget {
                   break;
                 case Phases.breathe:
                   message = 'Step 1:\n30-40 Deep Breaths';
+                  startCount = '';
                   break;
               }
               return Column(children: [
@@ -60,15 +62,15 @@ class WHTimerView extends StatelessWidget {
                   child: state.holdOnOutDuration > Decimal.zero
                       ? Text(state.holdOnOutDuration.toString(),
                           style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                          ))
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.red[900]))
                       : (state.holdOnInDuration > Decimal.zero
                           ? Text(state.holdOnInDuration.toString(),
                               style: TextStyle(
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold,
-                              ))
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.blue[900]))
                           : Text(startCount,
                               style: TextStyle(
                                 fontSize: 30,
