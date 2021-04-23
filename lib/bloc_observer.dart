@@ -6,9 +6,9 @@ import 'package:bloc/bloc.dart';
 /// {@endtemplate}
 class MyObserver extends BlocObserver {
   @override
-  void onChange(Cubit cubit, Change change) {
-    print('Observer talks: ${cubit.runtimeType} $change');
-    super.onChange(cubit, change);
+  void onChange(BlocBase bloc, Change change) {
+    print('Observer talks: ${bloc.runtimeType} $change');
+    super.onChange(bloc, change);
   }
 
   @override
