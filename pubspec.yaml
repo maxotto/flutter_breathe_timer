@@ -17,6 +17,9 @@ dependencies:
   decimal: ^0.3.0
   wave: ^0.2.0
   flutter_beep: ^0.2.0
+  intl: ^0.17.0
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -26,3 +29,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+flutter_intl:
+  main_locale: en_US
+  enabled: true
