@@ -46,7 +46,7 @@ class WHTimerView extends StatelessWidget {
                   height: 110,
                 ),
                 SizedBox(
-                  height: 150,
+                  height: 190,
                   child: Text(message,
                       textAlign: TextAlign.center,
                       style: TextStyle(

@@ -13,9 +13,9 @@ dependencies:
     sdk: flutter
   bloc: ^6.1.0
   flutter_bloc: ^6.1.0
-  wave: ^0.1.0
   equatable: ^1.2.5
   decimal: ^0.3.0
+  wave: ^0.2.0
 
 dev_dependencies:
   flutter_test:
