@@ -14,53 +14,69 @@ class WHTimerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Center(
           child: BlocBuilder<WhTimerBloc, WhTimerState>(
             builder: (context, state) {
               String message = "Message";
+              String startCount = '0';
               switch (state.phase) {
                 case Phases.idle:
-                  message = 'Step 1: 30-40 Deep Breaths';
+                  message = 'Step 1:\n Do 30-40 Deep Breaths';
+                  startCount = '';
                   break;
                 case Phases.holdOnOut:
                   message =
-                      'Step 2: The Hold. Let the air out and stop breathing';
+                      'Step 2:\nThe Hold. Let the air out and stop breathing';
                   break;
                 case Phases.holdOnIn:
                   message =
-                      'Step 3:  Draw one big breath to fill your lungs. Hold the breath for 15 seconds';
+                      'Step 3:\nDraw one big breath to fill your lungs. Hold the breath for 15 seconds';
+                  startCount = '15';
                   break;
                 case Phases.breathe:
-                  message = 'Step 1: 30-40 Deep Breaths';
+                  message = 'Step 1:\n30-40 Deep Breaths';
+                  startCount = '';
                   break;
               }
               return Column(children: [
-                Text(message,
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                    )),
+                SizedBox(
+                  height: 110,
+                ),
+                SizedBox(
+                  height: 190,
+                  child: Text(message,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      )),
+                ),
                 SizedBox(
                   height: 30,
                 ),
-                state.holdOnOutDuration > Decimal.zero
-                    ? Text(state.holdOnOutDuration.toString(),
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                        ))
-                    : (state.holdOnInDuration > Decimal.zero
-                        ? Text(state.holdOnInDuration.toString(),
-                            style: TextStyle(
+                SizedBox(
+                  height: 40,
+                  child: state.holdOnOutDuration > Decimal.zero
+                      ? Text(state.holdOnOutDuration.toString(),
+                          style: TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
-                            ))
-                        : SizedBox(
-                            height: 30,
-                          )),
+                              color: Colors.red[900]))
+                      : (state.holdOnInDuration > Decimal.zero
+                          ? Text(state.holdOnInDuration.toString(),
+                              style: TextStyle(
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.blue[900]))
+                          : Text(startCount,
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                              ))),
+                ),
                 SizedBox(
                   height: 30,
                 ),

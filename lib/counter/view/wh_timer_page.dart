@@ -19,7 +19,7 @@ class WHTimerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Wim Hof breathe timer')),
+      appBar: AppBar(title: Text('Breathe timer')),
       body: Stack(
         children: [
           Background(),
