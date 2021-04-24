@@ -1,4 +1,4 @@
-import 'package:WimHofTimer/counter/wh_timer.dart';
+import 'package:breath_timer/counter/wh_timer.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 
