@@ -1,0 +1,19 @@
+{
+  "@@locale": "en_US",
+  "step1": "Step 1:\n Do 30-40 Deep Breaths",
+  "@step1": {
+    "description": "Step 1"
+  },
+  "step2": "Step 2:\nThe Hold. Let the air out and stop breathing",
+  "@step2": {
+    "description": "Step 2"
+  },
+  "step3": "Step 3:\nDraw one big breath to fill your lungs. Hold the breath for 15 seconds",
+  "@step3": {
+    "description": "Step 3"
+  },
+  "appTitle": "Breath timer",
+  "@appTitle": {
+    "description": "App Title"
+  }
+}

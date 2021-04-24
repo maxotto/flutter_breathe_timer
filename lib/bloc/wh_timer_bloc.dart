@@ -52,8 +52,7 @@ class WhTimerBloc extends Bloc<WhTimerEvent, WhTimerState> {
           Decimal.fromInt(event.duration), Decimal.parse('0'));
     }
     if (event is WhTimerMinusTicked) {
-      if (event.duration == 0)
-        FlutterBeep.playSysSound(AndroidSoundIDs.TONE_SUP_RADIO_ACK);
+      if (event.duration == 0) FlutterBeep.beep();
       yield event.duration > 0
           ? WhTimerInSecondHold(Phases.holdOnIn, Decimal.parse('0'),
               Decimal.fromInt(event.duration))
@@ -63,7 +62,7 @@ class WhTimerBloc extends Bloc<WhTimerEvent, WhTimerState> {
   }
 
   Stream<WhTimerState> _mapNextToState(WhTimerNextEvent nextEvent) async* {
-    FlutterBeep.beep();
+    FlutterBeep.playSysSound(AndroidSoundIDs.TONE_SUP_RADIO_ACK);
     print('nextEvent');
     print(nextEvent.currentState);
     // тут надо понять, где мы сейчас. В зависимости от этого оп разному назначать состояния и запускать разные счетчики.
