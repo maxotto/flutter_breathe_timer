@@ -8,5 +8,5 @@ void main() {
   // эта штука нужна чтобы глобально отслеживать изменение состояний
   Bloc.observer = MyObserver();
   //это запуск собственно приложеньки
-  runApp(const WHTimerApp());
+  runApp(const WHTimerApp(key: const Key('1964')));
 }

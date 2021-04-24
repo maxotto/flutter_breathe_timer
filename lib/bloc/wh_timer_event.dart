@@ -11,7 +11,7 @@ abstract class WhTimerEvent extends Equatable {
 class WhTimerNextEvent extends WhTimerEvent {
   final WhTimerState currentState;
 
-  const WhTimerNextEvent({@required this.currentState});
+  const WhTimerNextEvent({required this.currentState});
 
   @override
   String toString() => 'WhTimerNextEvent {currentState = $currentState}';
@@ -20,7 +20,7 @@ class WhTimerNextEvent extends WhTimerEvent {
 class WhTimerResetEvent extends WhTimerEvent {
   final WhTimerState currentState;
 
-  const WhTimerResetEvent({@required this.currentState});
+  const WhTimerResetEvent({required this.currentState});
 
   @override
   String toString() => 'WhTimerResetEvent {currentState = $currentState}';
@@ -29,7 +29,7 @@ class WhTimerResetEvent extends WhTimerEvent {
 class WhTimerPlusTicked extends WhTimerEvent {
   final int duration;
 
-  const WhTimerPlusTicked({@required this.duration});
+  const WhTimerPlusTicked({required this.duration});
 
   @override
   List<Object> get props => [duration];
@@ -41,7 +41,7 @@ class WhTimerPlusTicked extends WhTimerEvent {
 class WhTimerMinusTicked extends WhTimerEvent {
   final int duration;
 
-  const WhTimerMinusTicked({@required this.duration});
+  const WhTimerMinusTicked({required this.duration});
 
   @override
   List<Object> get props => [duration];

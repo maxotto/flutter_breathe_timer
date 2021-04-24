@@ -1,5 +1,5 @@
-import 'package:WimHofTimer/counter/wh_timer.dart';
-import 'package:WimHofTimer/counter/view/wh_timer_view.dart';
+import 'package:breath_timer/counter/wh_timer.dart';
+import 'package:breath_timer/counter/view/wh_timer_view.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

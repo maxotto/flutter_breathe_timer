@@ -1,10 +1,10 @@
-import 'package:WimHofTimer/bloc/wh_timer_bloc.dart';
-import 'package:WimHofTimer/timer/timer.dart';
+import 'package:breath_timer/bloc/wh_timer_bloc.dart';
+import 'package:breath_timer/timer/timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
-
+import 'package:breath_timer/generated/l10n.dart';
 import '../wh_timer.dart';
 import 'wh_timer_view.dart';
 
@@ -14,12 +14,12 @@ import 'wh_timer_view.dart';
 /// {@endtemplate}
 class WHTimerPage extends StatelessWidget {
   /// {@macro counter_page}
-  const WHTimerPage({Key key}) : super(key: key);
+  const WHTimerPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Breathe timer')),
+      appBar: AppBar(title: Text(S.of(context).appTitle)),
       body: Stack(
         children: [
           Background(),
@@ -62,8 +62,8 @@ class Background extends StatelessWidget {
         gradientEnd: Alignment.topCenter,
       ),
       size: Size(double.infinity, double.infinity),
-      waveAmplitude: 25,
-      backgroundColor: Colors.blue[50],
+      waveAmplitude: 45,
+      backgroundColor: Colors.blue[250],
     );
   }
 }
