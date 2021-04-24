@@ -1,11 +1,9 @@
-import 'dart:async';
-
-import 'package:WimHofTimer/bloc/wh_timer_bloc.dart';
+import 'package:breath_timer/bloc/wh_timer_bloc.dart';
 import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../wh_timer.dart';
-import 'package:WimHofTimer/generated/l10n.dart';
+import 'package:breath_timer/generated/l10n.dart';
 
 /// {@template counter_view}
 /// A [StatelessWidget] which reacts to the provided
@@ -105,7 +103,7 @@ class Actions extends StatelessWidget {
   }
 
   List<Widget> _mapStateToActionButtons({
-    WhTimerBloc whTimerBloc,
+    required WhTimerBloc whTimerBloc,
   }) {
     final WhTimerState currentState = whTimerBloc.state;
     final _resetButton = FloatingActionButton(

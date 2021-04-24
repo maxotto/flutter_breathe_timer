@@ -1,10 +1,10 @@
-import 'package:WimHofTimer/bloc/wh_timer_bloc.dart';
-import 'package:WimHofTimer/timer/timer.dart';
+import 'package:breath_timer/bloc/wh_timer_bloc.dart';
+import 'package:breath_timer/timer/timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
-import 'package:WimHofTimer/generated/l10n.dart';
+import 'package:breath_timer/generated/l10n.dart';
 import '../wh_timer.dart';
 import 'wh_timer_view.dart';
 
@@ -14,7 +14,7 @@ import 'wh_timer_view.dart';
 /// {@endtemplate}
 class WHTimerPage extends StatelessWidget {
   /// {@macro counter_page}
-  const WHTimerPage({Key key}) : super(key: key);
+  const WHTimerPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
