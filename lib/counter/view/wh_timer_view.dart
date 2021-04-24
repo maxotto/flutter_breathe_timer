@@ -45,7 +45,7 @@ class WHTimerView extends StatelessWidget {
                   height: 50,
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 80,
                   child: Text(message,
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -96,8 +96,8 @@ class WHTimerView extends StatelessWidget {
 class Actions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: _mapStateToActionButtons(
         whTimerBloc: BlocProvider.of<WhTimerBloc>(context),
       ),
