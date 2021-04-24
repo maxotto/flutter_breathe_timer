@@ -64,6 +64,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Breath timer`
+  String get appTitle {
+    return Intl.message(
+      'Breath timer',
+      name: 'appTitle',
+      desc: 'App Title',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

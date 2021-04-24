@@ -11,6 +11,9 @@
   "step3": "Шаг 3:\nСделайте один глубокий вдох. Задержите дыхание на 15 секунд",
   "@step3": {
     "description": "Step 3"
+  },
+  "appTitle": "Таймер дыхания",
+  "@appTitle": {
+    "description": "App Title"
   }
-
 }

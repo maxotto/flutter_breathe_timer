@@ -11,5 +11,9 @@
   "step3": "Step 3:\nDraw one big breath to fill your lungs. Hold the breath for 15 seconds",
   "@step3": {
     "description": "Step 3"
+  },
+  "appTitle": "Breath timer",
+  "@appTitle": {
+    "description": "App Title"
   }
 }

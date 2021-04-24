@@ -57,7 +57,7 @@ class WHTimerView extends StatelessWidget {
                   height: 10,
                 ),
                 SizedBox(
-                  height: 40,
+                  height: 37,
                   child: state.holdOnOutDuration > Decimal.zero
                       ? Text(state.holdOnOutDuration.toString(),
                           style: TextStyle(
@@ -96,7 +96,7 @@ class WHTimerView extends StatelessWidget {
 class Actions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: _mapStateToActionButtons(
         whTimerBloc: BlocProvider.of<WhTimerBloc>(context),

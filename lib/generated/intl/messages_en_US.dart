@@ -21,6 +21,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "appTitle" : MessageLookupByLibrary.simpleMessage("Breath timer"),
     "step1" : MessageLookupByLibrary.simpleMessage("Step 1:\n Do 30-40 Deep Breaths"),
     "step2" : MessageLookupByLibrary.simpleMessage("Step 2:\nThe Hold. Let the air out and stop breathing"),
     "step3" : MessageLookupByLibrary.simpleMessage("Step 3:\nDraw one big breath to fill your lungs. Hold the breath for 15 seconds")

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
-
+import 'package:WimHofTimer/generated/l10n.dart';
 import '../wh_timer.dart';
 import 'wh_timer_view.dart';
 
@@ -19,7 +19,7 @@ class WHTimerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Breathe timer')),
+      appBar: AppBar(title: Text(S.of(context).appTitle)),
       body: Stack(
         children: [
           Background(),
