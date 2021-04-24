@@ -13,19 +13,19 @@ dependencies:
     sdk: flutter
   bloc: ^7.0.0
   flutter_bloc: ^7.0.0
-  equatable: ^1.2.5
-  decimal: ^0.3.0
+  equatable: ^2.0.0
+  decimal: ^1.0.0+1
   wave: ^0.2.0
-  flutter_beep: ^0.2.0
   intl: ^0.17.0
   flutter_localizations:
     sdk: flutter
+  flutter_ringtone_player: ^3.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   bloc_test: ^8.0.0
-  mockito: ^4.0.0
+  mockito: ^5.0.5
 
 flutter:
   uses-material-design: true
