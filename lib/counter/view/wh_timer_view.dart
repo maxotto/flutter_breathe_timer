@@ -1,9 +1,9 @@
-import 'package:breath_timer/bloc/wh_timer_bloc.dart';
+import '../../bloc/wh_timer_bloc.dart';
 import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../wh_timer.dart';
-import 'package:breath_timer/generated/l10n.dart';
+import '../../generated/l10n.dart';
 
 /// {@template counter_view}
 /// A [StatelessWidget] which reacts to the provided

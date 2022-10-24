@@ -1,4 +1,4 @@
-package com.example.breath_timer
+package com.example.wim_hof_timer
 
 import io.flutter.embedding.android.FlutterActivity
 

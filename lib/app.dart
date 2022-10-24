@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'counter/wh_timer.dart';
 
-import 'package:breath_timer/generated/l10n.dart';
+import 'generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 /// {@template counter_app}
