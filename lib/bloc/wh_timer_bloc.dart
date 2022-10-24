@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:breath_timer/timer/timer.dart';
+import '../timer/timer.dart';
 import 'package:bloc/bloc.dart';
 import 'package:decimal/decimal.dart';
 import 'package:equatable/equatable.dart';
@@ -26,15 +26,20 @@ class WhTimerBloc extends Bloc<WhTimerEvent, WhTimerState> {
   // начальное состояние для BLoC
 
   // передаем сюда также 2 наших счетчика для прямого и обратного счета
-  WhTimerBloc(
-      {required TickerPlus tickerPlus, required TickerMinus tickerMinus})
+  WhTimerBloc({required TickerPlus tickerPlus, required TickerMinus tickerMinus})
       : _tickerPlus = tickerPlus,
         _tickerMinus = tickerMinus,
         _tickerPlusSubscription = tickerPlus.tick().listen((duration) {}),
         _tickerMinusSubscription =
             tickerMinus.tick(ticks: 0).listen((duration) {}),
         super(WhTimerInitial(
-            Phases.idle, Decimal.parse('0'), Decimal.parse('0')));
+            Phases.idle,
+          Decimal.parse('0'),
+          Decimal.parse('0')
+      )
+      ){
+
+  }
 
   @override
   Stream<WhTimerState> mapEventToState(
